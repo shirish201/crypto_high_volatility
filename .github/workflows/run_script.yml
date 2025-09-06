@@ -34,6 +34,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           
-          git add state.json trade_log.txt
-          git commit -m "Update state and trade log" || echo "No changes to commit"
-          git push
+          git add top_df.csv
+          git commit -m "Update top_df.csv [skip ci]" || echo "No changes to commit"
+          git push origin HEAD:main
+
