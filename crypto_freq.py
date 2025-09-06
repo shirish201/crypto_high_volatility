@@ -76,7 +76,7 @@ symbols = ['ETHUSDT',
 ]
 
 interval = "1h"
-limit = 24  # Last 2 hours
+limit = 1  # Last 2 hours
 
 def get_klines_df(symbol, interval, limit):
     params = {
