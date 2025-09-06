@@ -1,0 +1,28 @@
+name: Run main.py every 5 minutes
+
+on:
+  schedule:
+    # ⏰ Run every 1 Hour (UTC)
+    - cron: "0 * * * *"
+  workflow_dispatch:   # optional: lets you run manually
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"   # change if needed
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt || true
+
+      - name: Run script
+        run: |
+          python crypto_freq.py
