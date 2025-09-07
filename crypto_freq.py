@@ -107,7 +107,7 @@ for symbol in symbols:
     print(f"Fetching {symbol}...")
     df = get_klines_df(symbol, interval, limit)
     if df is not None and len(df) == limit:
-        pct_change = ((df["close"].iloc[-1] - df["open"].iloc[0]) / df["close"].iloc[0]) * 100
+        pct_change = ((df["close"].iloc[-1] - df["open"].iloc[0]) / df["open"].iloc[0]) * 100
         results.append({
             "symbol": symbol,
             "pct_change": pct_change
